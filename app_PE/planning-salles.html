@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planning des salles</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <span class="logo"></span>
+        <span>Nom de l’entreprise</span>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a class="navlink" href="index.html">Accueil</a></li>
+          <li><a class="navlink" href="planning.html">Gérer le planning</a></li>
+          <li><a class="navlink primary" href="planning-salles.html">Planning des salles</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="card section-card">
+        <h1>Planning des salles</h1>
+        <p class="subtitle">
+          Cette page permet de définir, pour chaque salle,
+          s’il est nécessaire d’avoir un médecin par demi-journée.
+          <br />
+          <span class="subtitle">Pense à cliquer sur « Enregistrer disponibilités des salles » (données stockées sur cet ordinateur).</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANNING DES SALLES -->
+  <section>
+    <div class="container">
+      <div class="card section-card">
+        <h2>Salles</h2>
+
+        <div class="grid-3">
+          <!-- SALLE 1 -->
+          <div class="mini room-block" data-room="mammographie 1">
+            <h3>mammographie 1</h3>
+            <label><input type="checkbox" data-slot="Lundi matin" /> Lundi matin</label><br />
+            <label><input type="checkbox" data-slot="Lundi après-midi" /> Lundi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Mardi matin" /> Mardi matin</label><br />
+            <label><input type="checkbox" data-slot="Mardi après-midi" /> Mardi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Mercredi matin" /> Mercredi matin</label><br />
+            <label><input type="checkbox" data-slot="Mercredi après-midi" /> Mercredi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Jeudi matin" /> Jeudi matin</label><br />
+            <label><input type="checkbox" data-slot="Jeudi après-midi" /> Jeudi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Vendredi matin" /> Vendredi matin</label><br />
+            <label><input type="checkbox" data-slot="Vendredi après-midi" /> Vendredi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Samedi matin" /> Samedi matin</label><br />
+            <label><input type="checkbox" data-slot="Samedi après-midi" /> Samedi après-midi</label>
+          </div>
+
+          <!-- SALLE 2 -->
+          <div class="mini room-block" data-room="echographie 2">
+            <h3>echographie 2</h3>
+            <label><input type="checkbox" data-slot="Lundi matin" /> Lundi matin</label><br />
+            <label><input type="checkbox" data-slot="Lundi après-midi" /> Lundi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Mardi matin" /> Mardi matin</label><br />
+            <label><input type="checkbox" data-slot="Mardi après-midi" /> Mardi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Mercredi matin" /> Mercredi matin</label><br />
+            <label><input type="checkbox" data-slot="Mercredi après-midi" /> Mercredi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Jeudi matin" /> Jeudi matin</label><br />
+            <label><input type="checkbox" data-slot="Jeudi après-midi" /> Jeudi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Vendredi matin" /> Vendredi matin</label><br />
+            <label><input type="checkbox" data-slot="Vendredi après-midi" /> Vendredi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Samedi matin" /> Samedi matin</label><br />
+            <label><input type="checkbox" data-slot="Samedi après-midi" /> Samedi après-midi</label>
+          </div>
+
+          <!-- SALLE 3 -->
+          <div class="mini room-block" data-room="echographie 3">
+            <h3>echographie 3</h3>
+            <label><input type="checkbox" data-slot="Lundi matin" /> Lundi matin</label><br />
+            <label><input type="checkbox" data-slot="Lundi après-midi" /> Lundi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Mardi matin" /> Mardi matin</label><br />
+            <label><input type="checkbox" data-slot="Mardi après-midi" /> Mardi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Mercredi matin" /> Mercredi matin</label><br />
+            <label><input type="checkbox" data-slot="Mercredi après-midi" /> Mercredi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Jeudi matin" /> Jeudi matin</label><br />
+            <label><input type="checkbox" data-slot="Jeudi après-midi" /> Jeudi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Vendredi matin" /> Vendredi matin</label><br />
+            <label><input type="checkbox" data-slot="Vendredi après-midi" /> Vendredi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Samedi matin" /> Samedi matin</label><br />
+            <label><input type="checkbox" data-slot="Samedi après-midi" /> Samedi après-midi</label>
+          </div>
+
+          <!-- SALLE 4 -->
+          <div class="mini room-block" data-room="scanner">
+            <h3>scanner</h3>
+            <label><input type="checkbox" data-slot="Lundi matin" /> Lundi matin</label><br />
+            <label><input type="checkbox" data-slot="Lundi après-midi" /> Lundi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Mardi matin" /> Mardi matin</label><br />
+            <label><input type="checkbox" data-slot="Mardi après-midi" /> Mardi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Mercredi matin" /> Mercredi matin</label><br />
+            <label><input type="checkbox" data-slot="Mercredi après-midi" /> Mercredi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Jeudi matin" /> Jeudi matin</label><br />
+            <label><input type="checkbox" data-slot="Jeudi après-midi" /> Jeudi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Vendredi matin" /> Vendredi matin</label><br />
+            <label><input type="checkbox" data-slot="Vendredi après-midi" /> Vendredi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Samedi matin" /> Samedi matin</label><br />
+            <label><input type="checkbox" data-slot="Samedi après-midi" /> Samedi après-midi</label>
+          </div>
+
+          <!-- SALLE 5 -->
+          <div class="mini room-block" data-room="IRM">
+            <h3>IRM</h3>
+            <label><input type="checkbox" data-slot="Lundi matin" /> Lundi matin</label><br />
+            <label><input type="checkbox" data-slot="Lundi après-midi" /> Lundi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Mardi matin" /> Mardi matin</label><br />
+            <label><input type="checkbox" data-slot="Mardi après-midi" /> Mardi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Mercredi matin" /> Mercredi matin</label><br />
+            <label><input type="checkbox" data-slot="Mercredi après-midi" /> Mercredi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Jeudi matin" /> Jeudi matin</label><br />
+            <label><input type="checkbox" data-slot="Jeudi après-midi" /> Jeudi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Vendredi matin" /> Vendredi matin</label><br />
+            <label><input type="checkbox" data-slot="Vendredi après-midi" /> Vendredi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Samedi matin" /> Samedi matin</label><br />
+            <label><input type="checkbox" data-slot="Samedi après-midi" /> Samedi après-midi</label>
+          </div>
+
+          <!-- SALLE 6 -->
+          <div class="mini room-block" data-room="radiographie Saint Sever">
+            <h3>radiographie Saint Sever</h3>
+            <label><input type="checkbox" data-slot="Lundi matin" /> Lundi matin</label><br />
+            <label><input type="checkbox" data-slot="Lundi après-midi" /> Lundi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Mardi matin" /> Mardi matin</label><br />
+            <label><input type="checkbox" data-slot="Mardi après-midi" /> Mardi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Mercredi matin" /> Mercredi matin</label><br />
+            <label><input type="checkbox" data-slot="Mercredi après-midi" /> Mercredi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Jeudi matin" /> Jeudi matin</label><br />
+            <label><input type="checkbox" data-slot="Jeudi après-midi" /> Jeudi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Vendredi matin" /> Vendredi matin</label><br />
+            <label><input type="checkbox" data-slot="Vendredi après-midi" /> Vendredi après-midi</label><br />
+            <label><input type="checkbox" data-slot="Samedi matin" /> Samedi matin</label><br />
+            <label><input type="checkbox" data-slot="Samedi après-midi" /> Samedi après-midi</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOUTONS FIN -->
+  <section>
+    <div class="container">
+      <div class="card section-card">
+        <h2>Navigation</h2>
+        <div class="cta-row">
+          <button class="btn primary" type="button" id="save-rooms">Enregistrer disponibilités des salles</button>
+          <a class="btn" href="planning.html">Gérer le planning</a>
+          <a class="btn primary" href="planning-salles.html">Planning des salles</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+</body>
+<script>
+  const ROOMS_STORAGE_KEY = "planning_2026_rooms_v1";
+
+  function loadRoomsStore() {
+    try {
+      return JSON.parse(localStorage.getItem(ROOMS_STORAGE_KEY)) || {};
+    } catch {
+      return {};
+    }
+  }
+
+  function saveRoomsStore(store) {
+    localStorage.setItem(ROOMS_STORAGE_KEY, JSON.stringify(store));
+  }
+
+  function readRoomsFromPage() {
+    const data = {};
+    document.querySelectorAll('.room-block[data-room]').forEach((block) => {
+      const room = block.getAttribute('data-room');
+      const requiredSlots = Array.from(block.querySelectorAll('input[type="checkbox"][data-slot]'))
+        .filter((cb) => cb.checked)
+        .map((cb) => cb.getAttribute('data-slot'));
+      data[room] = requiredSlots;
+    });
+    return data;
+  }
+
+  function applyRoomsToPage(store) {
+    document.querySelectorAll('.room-block[data-room]').forEach((block) => {
+      const room = block.getAttribute('data-room');
+      const required = new Set(store[room] || []);
+      block.querySelectorAll('input[type="checkbox"][data-slot]').forEach((cb) => {
+        const slot = cb.getAttribute('data-slot');
+        cb.checked = required.has(slot);
+      });
+    });
+  }
+
+  // Save button
+  document.getElementById('save-rooms')?.addEventListener('click', () => {
+    const store = readRoomsFromPage();
+    saveRoomsStore(store);
+    alert('✅ Disponibilités des salles enregistrées !');
+  });
+
+  // Auto-load
+  document.addEventListener('DOMContentLoaded', () => {
+    const store = loadRoomsStore();
+    applyRoomsToPage(store);
+  });
+
+  // Optional: expose a helper to copy JSON easily in the console
+  window.getRoomsAvailabilityJSON = function () {
+    return loadRoomsStore();
+  };
+</script>
+</html>

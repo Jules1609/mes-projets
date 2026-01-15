@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gérer le planning</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <span class="logo"></span>
+        <span>Nursa</span>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a class="navlink" href="index.html">Accueil</a></li>
+          <li><a class="navlink" href="#doctors">Médecins</a></li>
+          <li><a class="navlink primary" href="planning.html">Planning</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="card section-card">
+        <h1>Contraintes des médecins</h1>
+        <p class="subtitle">
+            Pour chaque médecin, il est nécessaire de renseigner les contraintes associées : nombre de jours de travail, périodes de vacances, salles autorisées, ainsi que les autres disponibilités et préférences éventuelles.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="doctors">
+    <div class="container">
+      <div class="card section-card">
+        <h2>Médecins</h2>
+        <p class="subtitle">Nombre de médecins : <b>8</b></p>
+
+        <div class="grid-3">
+            <a class="mini" href="#doc-1" aria-label="Ouvrir la fiche du Dr CAMPIAN Nicoleta">
+                <h3>Dr CAMPIAN Nicoleta</h3>
+                <p>Renseigner contraintes & disponibilités</p>
+              </a>
+              
+              <a class="mini" href="#doc-2" aria-label="Ouvrir la fiche du Dr CAMPISTRON Philippe">
+                <h3>Dr CAMPISTRON Philippe</h3>
+                <p>Renseigner contraintes & disponibilités</p>
+              </a>
+              
+              <a class="mini" href="#doc-3" aria-label="Ouvrir la fiche du Dr CHEMIN Luc">
+                <h3>Dr CHEMIN Luc</h3>
+                <p>Renseigner contraintes & disponibilités</p>
+              </a>
+              
+              <a class="mini" href="#doc-4" aria-label="Ouvrir la fiche du Dr DE HALDAT DU LYS François">
+                <h3>Dr DE HALDAT DU LYS François</h3>
+                <p>Renseigner contraintes & disponibilités</p>
+              </a>
+              
+              <a class="mini" href="#doc-5" aria-label="Ouvrir la fiche du Dr MATRAN Philippe">
+                <h3>Dr MATRAN Philippe</h3>
+                <p>Renseigner contraintes & disponibilités</p>
+              </a>
+              
+              <a class="mini" href="#doc-6" aria-label="Ouvrir la fiche du Dr MAUPOME MORERA Hélène">
+                <h3>Dr MAUPOME MORERA Hélène</h3>
+                <p>Renseigner contraintes & disponibilités</p>
+              </a>
+              
+              <a class="mini" href="#doc-7" aria-label="Ouvrir la fiche du Dr EL KARZAZI TARAZONA Karima">
+                <h3>Dr EL KARZAZI TARAZONA Karima</h3>
+                <p>Renseigner contraintes & disponibilités</p>
+              </a>
+              
+              <a class="mini" href="#doc-8" aria-label="Ouvrir la fiche du Dr VICART VERGNES Evelyne">
+                <h3>Dr VICART VERGNES Evelyne</h3>
+                <p>Renseigner contraintes & disponibilités</p>
+              </a>
+        </div>
+
+        
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section id="doc-1" data-doctor="Dr CAMPIAN Nicoleta">
+    <div class="container">
+      <div class="card section-card">
+        <h2>Fiche médecin — Dr CAMPIAN Nicoleta</h2>
+        <p class="subtitle"><a class="navlink" href="#doctors">← Retour à la liste des médecins</a></p>
+  
+        <h3 style="margin-top:18px;">Disponibilités </h3>
+        <p class="subtitle">Coche les demi-journées disponibles.</p>
+  
+        <form class="doctor-form" autocomplete="off">
+          <div class="mini">
+            <h3>Paramètres généraux</h3>
+    
+  
+            <label style="display:block; margin-top:10px;">
+              <b>Nombre de jours de travail par semaine</b><br />
+              <input
+                type="number"
+                min="0"
+                max="7"
+                step="1"
+                placeholder="Ex : 4"
+                style="margin-top:8px; width:180px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;"
+              />
+            </label>
+  
+            <div style="margin-top:14px;">
+              <b>Salles autorisées</b>
+              <p class="subtitle" style="margin-top:6px;">Coche les salles où tu peux travailler.</p>
+              <label><input type="checkbox" /> mammographie 1</label><br />
+              <label><input type="checkbox" /> echographie 2</label><br />
+              <label><input type="checkbox" /> echographie 3</label><br />
+              <label><input type="checkbox" /> scanner</label><br />
+              <label><input type="checkbox" /> IRM</label><br />
+              <label><input type="checkbox" /> radiographie Saint Sever</label>
+            </div>
+  
+            <div style="margin-top:14px;">
+              <b>Vacances souhaitées (année 2026)</b>
+              
+  
+              <div class="vacations-grid" style="display:grid; gap:10px;">
+                <div>
+                  <span class="subtitle"><b>Période 1</b></span><br />
+                  <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  <span class="subtitle" style="margin:0 8px;">→</span>
+                  <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                </div>
+  
+                <div>
+                  <span class="subtitle"><b>Période 2</b></span><br />
+                  <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  <span class="subtitle" style="margin:0 8px;">→</span>
+                  <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                </div>
+  
+                <div>
+                  <span class="subtitle"><b>Période 3</b></span><br />
+                  <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  <span class="subtitle" style="margin:0 8px;">→</span>
+                  <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                </div>
+              </div>
+  
+              <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                <button class="btn add-period-btn" type="button">+ Ajouter une période</button>
+             
+              </div>
+            </div>
+          </div>
+  
+          <div class="grid-3">
+            <div class="mini">
+              <h3>Lundi</h3>
+              <label><input type="checkbox" /> Matin</label><br />
+              <label><input type="checkbox" /> Après-midi</label>
+            </div>
+            <div class="mini">
+              <h3>Mardi</h3>
+              <label><input type="checkbox" /> Matin</label><br />
+              <label><input type="checkbox" /> Après-midi</label>
+            </div>
+            <div class="mini">
+              <h3>Mercredi</h3>
+              <label><input type="checkbox" /> Matin</label><br />
+              <label><input type="checkbox" /> Après-midi</label>
+            </div>
+            <div class="mini">
+              <h3>Jeudi</h3>
+              <label><input type="checkbox" /> Matin</label><br />
+              <label><input type="checkbox" /> Après-midi</label>
+            </div>
+            <div class="mini">
+              <h3>Vendredi</h3>
+              <label><input type="checkbox" /> Matin</label><br />
+              <label><input type="checkbox" /> Après-midi</label>
+            </div>
+            <div class="mini">
+              <h3>Samedi</h3>
+              <label><input type="checkbox" /> Matin</label><br />
+              <label><input type="checkbox" /> Après-midi</label>
+            </div>
+          </div>
+  
+          <div style="margin-top:14px;" class="mini">
+            <h3>Contraintes / notes</h3>
+            <p class="subtitle">Ex : pas de consultation le mercredi matin, préférer salle 2, etc.</p>
+            <textarea rows="4" style="width:100%; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;"></textarea>
+          </div>
+  
+          <button class="btn primary save-doctor" type="button">Enregistrer</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <section id="doc-2" data-doctor="Dr CAMPISTRON Philippe">
+    <div class="container">
+      <div class="card section-card">
+        <h2>Fiche médecin — Dr CAMPISTRON Philippe</h2>
+        <p class="subtitle"><a class="navlink" href="#doctors">← Retour à la liste des médecins</a></p>
+        <form class="doctor-form" autocomplete="off">
+            <div class="mini">
+              <h3>Paramètres généraux</h3>
+      
+    
+              <label style="display:block; margin-top:10px;">
+                <b>Nombre de jours de travail par semaine</b><br />
+                <input
+                  type="number"
+                  min="0"
+                  max="7"
+                  step="1"
+                  placeholder="Ex : 4"
+                  style="margin-top:8px; width:180px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;"
+                />
+              </label>
+    
+              <div style="margin-top:14px;">
+                <b>Salles autorisées</b>
+                <p class="subtitle" style="margin-top:6px;">Coche les salles où tu peux travailler.</p>
+                <label><input type="checkbox" /> mammographie 1</label><br />
+                <label><input type="checkbox" /> echographie 2</label><br />
+                <label><input type="checkbox" /> echographie 3</label><br />
+                <label><input type="checkbox" /> scanner</label><br />
+                <label><input type="checkbox" /> IRM</label><br />
+                <label><input type="checkbox" /> radiographie Saint Sever</label>
+              </div>
+    
+              <div style="margin-top:14px;">
+                <b>Vacances souhaitées (année 2026)</b>
+                
+    
+                <div class="vacations-grid" style="display:grid; gap:10px;">
+                  <div>
+                    <span class="subtitle"><b>Période 1</b></span><br />
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                    <span class="subtitle" style="margin:0 8px;">→</span>
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  </div>
+    
+                  <div>
+                    <span class="subtitle"><b>Période 2</b></span><br />
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                    <span class="subtitle" style="margin:0 8px;">→</span>
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  </div>
+    
+                  <div>
+                    <span class="subtitle"><b>Période 3</b></span><br />
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                    <span class="subtitle" style="margin:0 8px;">→</span>
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  </div>
+                </div>
+    
+                <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                  <button class="btn add-period-btn" type="button">+ Ajouter une période</button>
+               
+                </div>
+              </div>
+            </div>
+    
+            <div class="grid-3">
+              <div class="mini">
+                <h3>Lundi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Mardi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Mercredi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Jeudi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Vendredi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Samedi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+            </div>
+    
+            <div style="margin-top:14px;" class="mini">
+              <h3>Contraintes / notes</h3>
+              <p class="subtitle">Ex : pas de consultation le mercredi matin, préférer salle 2, etc.</p>
+              <textarea rows="4" style="width:100%; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;"></textarea>
+            </div>
+    
+            <button class="btn primary save-doctor" type="button">Enregistrer</button>
+          </form>
+      </div>
+    </div>
+  </section>
+  
+  <section id="doc-3" data-doctor="Dr CHEMIN Luc">
+    <div class="container">
+      <div class="card section-card">
+        <h2>Fiche médecin — Dr CHEMIN Luc</h2>
+        <p class="subtitle"><a class="navlink" href="#doctors">← Retour à la liste des médecins</a></p>
+        <form class="doctor-form" autocomplete="off">
+            <div class="mini">
+              <h3>Paramètres généraux</h3>
+      
+    
+              <label style="display:block; margin-top:10px;">
+                <b>Nombre de jours de travail par semaine</b><br />
+                <input
+                  type="number"
+                  min="0"
+                  max="7"
+                  step="1"
+                  placeholder="Ex : 4"
+                  style="margin-top:8px; width:180px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;"
+                />
+              </label>
+    
+              <div style="margin-top:14px;">
+                <b>Salles autorisées</b>
+                <p class="subtitle" style="margin-top:6px;">Coche les salles où tu peux travailler.</p>
+                <label><input type="checkbox" /> mammographie 1</label><br />
+                <label><input type="checkbox" /> echographie 2</label><br />
+                <label><input type="checkbox" /> echographie 3</label><br />
+                <label><input type="checkbox" /> scanner</label><br />
+                <label><input type="checkbox" /> IRM</label><br />
+                <label><input type="checkbox" /> radiographie Saint Sever</label>
+              </div>
+    
+              <div style="margin-top:14px;">
+                <b>Vacances souhaitées (année 2026)</b>
+                
+    
+                <div class="vacations-grid" style="display:grid; gap:10px;">
+                  <div>
+                    <span class="subtitle"><b>Période 1</b></span><br />
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                    <span class="subtitle" style="margin:0 8px;">→</span>
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  </div>
+    
+                  <div>
+                    <span class="subtitle"><b>Période 2</b></span><br />
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                    <span class="subtitle" style="margin:0 8px;">→</span>
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  </div>
+    
+                  <div>
+                    <span class="subtitle"><b>Période 3</b></span><br />
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                    <span class="subtitle" style="margin:0 8px;">→</span>
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  </div>
+                </div>
+    
+                <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                  <button class="btn add-period-btn" type="button">+ Ajouter une période</button>
+               
+                </div>
+              </div>
+            </div>
+    
+            <div class="grid-3">
+              <div class="mini">
+                <h3>Lundi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Mardi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Mercredi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Jeudi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Vendredi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Samedi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+            </div>
+    
+            <div style="margin-top:14px;" class="mini">
+              <h3>Contraintes / notes</h3>
+              <p class="subtitle">Ex : pas de consultation le mercredi matin, préférer salle 2, etc.</p>
+              <textarea rows="4" style="width:100%; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;"></textarea>
+            </div>
+    
+            <button class="btn primary save-doctor" type="button">Enregistrer</button>
+          </form>
+      </div>
+    </div>
+  </section>
+  
+  <section id="doc-4" data-doctor="Dr DE HALDAT DU LYS François">
+    <div class="container">
+      <div class="card section-card">
+        <h2>Fiche médecin — Dr DE HALDAT DU LYS François</h2>
+        <p class="subtitle"><a class="navlink" href="#doctors">← Retour à la liste des médecins</a></p>
+        <!-- Duplique le même <form> que doc-1 -->
+      </div>
+    </div>
+  </section>
+  
+  <section id="doc-5" data-doctor="Dr MATRAN Philippe">
+    <div class="container">
+      <div class="card section-card">
+        <h2>Fiche médecin — Dr MATRAN Philippe</h2>
+        <p class="subtitle"><a class="navlink" href="#doctors">← Retour à la liste des médecins</a></p>
+        <form class="doctor-form" autocomplete="off">
+            <div class="mini">
+              <h3>Paramètres généraux</h3>
+      
+    
+              <label style="display:block; margin-top:10px;">
+                <b>Nombre de jours de travail par semaine</b><br />
+                <input
+                  type="number"
+                  min="0"
+                  max="7"
+                  step="1"
+                  placeholder="Ex : 4"
+                  style="margin-top:8px; width:180px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;"
+                />
+              </label>
+    
+              <div style="margin-top:14px;">
+                <b>Salles autorisées</b>
+                <p class="subtitle" style="margin-top:6px;">Coche les salles où tu peux travailler.</p>
+                <label><input type="checkbox" /> mammographie 1</label><br />
+                <label><input type="checkbox" /> echographie 2</label><br />
+                <label><input type="checkbox" /> echographie 3</label><br />
+                <label><input type="checkbox" /> scanner</label><br />
+                <label><input type="checkbox" /> IRM</label><br />
+                <label><input type="checkbox" /> radiographie Saint Sever</label>
+              </div>
+    
+              <div style="margin-top:14px;">
+                <b>Vacances souhaitées (année 2026)</b>
+                
+    
+                <div class="vacations-grid" style="display:grid; gap:10px;">
+                  <div>
+                    <span class="subtitle"><b>Période 1</b></span><br />
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                    <span class="subtitle" style="margin:0 8px;">→</span>
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  </div>
+    
+                  <div>
+                    <span class="subtitle"><b>Période 2</b></span><br />
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                    <span class="subtitle" style="margin:0 8px;">→</span>
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  </div>
+    
+                  <div>
+                    <span class="subtitle"><b>Période 3</b></span><br />
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                    <span class="subtitle" style="margin:0 8px;">→</span>
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  </div>
+                </div>
+    
+                <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                  <button class="btn add-period-btn" type="button">+ Ajouter une période</button>
+               
+                </div>
+              </div>
+            </div>
+    
+            <div class="grid-3">
+              <div class="mini">
+                <h3>Lundi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Mardi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Mercredi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Jeudi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Vendredi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Samedi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+            </div>
+    
+            <div style="margin-top:14px;" class="mini">
+              <h3>Contraintes / notes</h3>
+              <p class="subtitle">Ex : pas de consultation le mercredi matin, préférer salle 2, etc.</p>
+              <textarea rows="4" style="width:100%; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;"></textarea>
+            </div>
+    
+            <button class="btn primary save-doctor" type="button">Enregistrer</button>
+          </form>
+      </div>
+    </div>
+  </section>
+  
+  <section id="doc-6" data-doctor="Dr MAUPOME MORERA Hélène">
+    <div class="container">
+      <div class="card section-card">
+        <h2>Fiche médecin — Dr MAUPOME MORERA Hélène</h2>
+        <p class="subtitle"><a class="navlink" href="#doctors">← Retour à la liste des médecins</a></p>
+        <form class="doctor-form" autocomplete="off">
+            <div class="mini">
+              <h3>Paramètres généraux</h3>
+      
+    
+              <label style="display:block; margin-top:10px;">
+                <b>Nombre de jours de travail par semaine</b><br />
+                <input
+                  type="number"
+                  min="0"
+                  max="7"
+                  step="1"
+                  placeholder="Ex : 4"
+                  style="margin-top:8px; width:180px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;"
+                />
+              </label>
+    
+              <div style="margin-top:14px;">
+                <b>Salles autorisées</b>
+                <p class="subtitle" style="margin-top:6px;">Coche les salles où tu peux travailler.</p>
+                <label><input type="checkbox" /> mammographie 1</label><br />
+                <label><input type="checkbox" /> echographie 2</label><br />
+                <label><input type="checkbox" /> echographie 3</label><br />
+                <label><input type="checkbox" /> scanner</label><br />
+                <label><input type="checkbox" /> IRM</label><br />
+                <label><input type="checkbox" /> radiographie Saint Sever</label>
+              </div>
+    
+              <div style="margin-top:14px;">
+                <b>Vacances souhaitées (année 2026)</b>
+                
+    
+                <div class="vacations-grid" style="display:grid; gap:10px;">
+                  <div>
+                    <span class="subtitle"><b>Période 1</b></span><br />
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                    <span class="subtitle" style="margin:0 8px;">→</span>
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  </div>
+    
+                  <div>
+                    <span class="subtitle"><b>Période 2</b></span><br />
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                    <span class="subtitle" style="margin:0 8px;">→</span>
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  </div>
+    
+                  <div>
+                    <span class="subtitle"><b>Période 3</b></span><br />
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                    <span class="subtitle" style="margin:0 8px;">→</span>
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  </div>
+                </div>
+    
+                <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                  <button class="btn add-period-btn" type="button">+ Ajouter une période</button>
+               
+                </div>
+              </div>
+            </div>
+    
+            <div class="grid-3">
+              <div class="mini">
+                <h3>Lundi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Mardi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Mercredi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Jeudi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Vendredi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Samedi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+            </div>
+    
+            <div style="margin-top:14px;" class="mini">
+              <h3>Contraintes / notes</h3>
+              <p class="subtitle">Ex : pas de consultation le mercredi matin, préférer salle 2, etc.</p>
+              <textarea rows="4" style="width:100%; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;"></textarea>
+            </div>
+    
+            <button class="btn primary save-doctor" type="button">Enregistrer</button>
+          </form>
+      </div>
+    </div>
+  </section>
+  
+  <section id="doc-7" data-doctor="Dr EL KARZAZI TARAZONA Karima">
+    <div class="container">
+      <div class="card section-card">
+        <h2>Fiche médecin — Dr EL KARZAZI TARAZONA Karima</h2>
+        <p class="subtitle"><a class="navlink" href="#doctors">← Retour à la liste des médecins</a></p>
+        <form class="doctor-form" autocomplete="off">
+            <div class="mini">
+              <h3>Paramètres généraux</h3>
+      
+    
+              <label style="display:block; margin-top:10px;">
+                <b>Nombre de jours de travail par semaine</b><br />
+                <input
+                  type="number"
+                  min="0"
+                  max="7"
+                  step="1"
+                  placeholder="Ex : 4"
+                  style="margin-top:8px; width:180px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;"
+                />
+              </label>
+    
+              <div style="margin-top:14px;">
+                <b>Salles autorisées</b>
+                <p class="subtitle" style="margin-top:6px;">Coche les salles où tu peux travailler.</p>
+                <label><input type="checkbox" /> mammographie 1</label><br />
+                <label><input type="checkbox" /> echographie 2</label><br />
+                <label><input type="checkbox" /> echographie 3</label><br />
+                <label><input type="checkbox" /> scanner</label><br />
+                <label><input type="checkbox" /> IRM</label><br />
+                <label><input type="checkbox" /> radiographie Saint Sever</label>
+              </div>
+    
+              <div style="margin-top:14px;">
+                <b>Vacances souhaitées (année 2026)</b>
+                
+    
+                <div class="vacations-grid" style="display:grid; gap:10px;">
+                  <div>
+                    <span class="subtitle"><b>Période 1</b></span><br />
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                    <span class="subtitle" style="margin:0 8px;">→</span>
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  </div>
+    
+                  <div>
+                    <span class="subtitle"><b>Période 2</b></span><br />
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                    <span class="subtitle" style="margin:0 8px;">→</span>
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  </div>
+    
+                  <div>
+                    <span class="subtitle"><b>Période 3</b></span><br />
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                    <span class="subtitle" style="margin:0 8px;">→</span>
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  </div>
+                </div>
+    
+                <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                  <button class="btn add-period-btn" type="button">+ Ajouter une période</button>
+               
+                </div>
+              </div>
+            </div>
+    
+            <div class="grid-3">
+              <div class="mini">
+                <h3>Lundi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Mardi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Mercredi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Jeudi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Vendredi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Samedi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+            </div>
+    
+            <div style="margin-top:14px;" class="mini">
+              <h3>Contraintes / notes</h3>
+              <p class="subtitle">Ex : pas de consultation le mercredi matin, préférer salle 2, etc.</p>
+              <textarea rows="4" style="width:100%; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;"></textarea>
+            </div>
+    
+            <button class="btn primary save-doctor" type="button">Enregistrer</button>
+          </form>
+      </div>
+    </div>
+  </section>
+  
+  <section id="doc-8" data-doctor="Dr VICART VERGNES Evelyne">
+    <div class="container">
+      <div class="card section-card">
+        <h2>Fiche médecin — Dr VICART VERGNES Evelyne</h2>
+        <p class="subtitle"><a class="navlink" href="#doctors">← Retour à la liste des médecins</a></p>
+        <form class="doctor-form" autocomplete="off">
+            <div class="mini">
+              <h3>Paramètres généraux</h3>
+      
+    
+              <label style="display:block; margin-top:10px;">
+                <b>Nombre de jours de travail par semaine</b><br />
+                <input
+                  type="number"
+                  min="0"
+                  max="7"
+                  step="1"
+                  placeholder="Ex : 4"
+                  style="margin-top:8px; width:180px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;"
+                />
+              </label>
+    
+              <div style="margin-top:14px;">
+                <b>Salles autorisées</b>
+                <p class="subtitle" style="margin-top:6px;">Coche les salles où tu peux travailler.</p>
+                <label><input type="checkbox" /> mammographie 1</label><br />
+                <label><input type="checkbox" /> echographie 2</label><br />
+                <label><input type="checkbox" /> echographie 3</label><br />
+                <label><input type="checkbox" /> scanner</label><br />
+                <label><input type="checkbox" /> IRM</label><br />
+                <label><input type="checkbox" /> radiographie Saint Sever</label>
+              </div>
+    
+              <div style="margin-top:14px;">
+                <b>Vacances souhaitées (année 2026)</b>
+                
+    
+                <div class="vacations-grid" style="display:grid; gap:10px;">
+                  <div>
+                    <span class="subtitle"><b>Période 1</b></span><br />
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                    <span class="subtitle" style="margin:0 8px;">→</span>
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  </div>
+    
+                  <div>
+                    <span class="subtitle"><b>Période 2</b></span><br />
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                    <span class="subtitle" style="margin:0 8px;">→</span>
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  </div>
+    
+                  <div>
+                    <span class="subtitle"><b>Période 3</b></span><br />
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                    <span class="subtitle" style="margin:0 8px;">→</span>
+                    <input type="date" min="2026-01-01" max="2026-12-31" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+                  </div>
+                </div>
+    
+                <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                  <button class="btn add-period-btn" type="button">+ Ajouter une période</button>
+               
+                </div>
+              </div>
+            </div>
+    
+            <div class="grid-3">
+              <div class="mini">
+                <h3>Lundi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Mardi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Mercredi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Jeudi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Vendredi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+              <div class="mini">
+                <h3>Samedi</h3>
+                <label><input type="checkbox" /> Matin</label><br />
+                <label><input type="checkbox" /> Après-midi</label>
+              </div>
+            </div>
+    
+            <div style="margin-top:14px;" class="mini">
+              <h3>Contraintes / notes</h3>
+              <p class="subtitle">Ex : pas de consultation le mercredi matin, préférer salle 2, etc.</p>
+              <textarea rows="4" style="width:100%; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;"></textarea>
+            </div>
+    
+            <button class="btn primary save-doctor" type="button">Enregistrer</button>
+          </form>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  
+</main>
+
+<script>
+  // Helpers for vacations blocks
+  function createVacationBlock(index, startValue = "", endValue = "", withRemove = true) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'vacation-period';
+
+    wrapper.innerHTML = `
+      <span class="subtitle"><b>Période ${index}</b></span>
+      ${withRemove ? '<button type="button" class="btn remove-period-btn" style="padding:6px 10px; border-radius:10px; margin-left:10px;">Supprimer</button>' : ''}
+      <br />
+      <input type="date" min="2026-01-01" max="2026-12-31" value="${startValue}" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+      <span class="subtitle" style="margin:0 8px;">→</span>
+      <input type="date" min="2026-01-01" max="2026-12-31" value="${endValue}" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;" />
+    `;
+
+    return wrapper;
+  }
+
+  function renumberPeriods(periodsGrid) {
+    const blocks = periodsGrid.querySelectorAll(':scope > div');
+    blocks.forEach((block, idx) => {
+      const label = block.querySelector('span.subtitle b');
+      if (label) label.textContent = `Période ${idx + 1}`;
+    });
+  }
+
+  // Ajout dynamique de périodes de vacances (2026)
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.add-period-btn');
+    if (!btn) return;
+
+    // Robust: find the grid within the same doctor section/form
+    const section = btn.closest('section[id^="doc-"]');
+    const periodsGrid = section ? section.querySelector('.vacations-grid') : null;
+    if (!periodsGrid) return;
+
+    const existingPeriods = periodsGrid.querySelectorAll(':scope > div').length;
+    const nextIndex = existingPeriods + 1;
+
+    // Limite simple (pour éviter d'en ajouter 50 par erreur)
+    if (nextIndex > 12) {
+      alert('Limite atteinte : 12 périodes maximum.');
+      return;
+    }
+
+    const wrapper = createVacationBlock(nextIndex, "", "", true);
+
+    const removeBtn = wrapper.querySelector('.remove-period-btn');
+    if (removeBtn) {
+      removeBtn.addEventListener('click', () => {
+        wrapper.remove();
+        renumberPeriods(periodsGrid);
+      });
+    }
+
+    periodsGrid.appendChild(wrapper);
+    renumberPeriods(periodsGrid);
+  });
+</script>
+
+
+
+<script>
+  const STORAGE_KEY = "planning_2026_doctors_v1";
+
+  function loadStore() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+    } catch {
+      return {};
+    }
+  }
+
+  function saveStore(store) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
+  }
+
+  function readVacations(sectionEl) {
+    const grid = sectionEl.querySelector('.vacations-grid');
+    if (!grid) return [];
+
+    const blocks = Array.from(grid.querySelectorAll(':scope > div'));
+    const vacations = [];
+
+    blocks.forEach((block) => {
+      const inputs = Array.from(block.querySelectorAll('input[type="date"]'));
+      const start = inputs[0]?.value || "";
+      const end = inputs[1]?.value || "";
+      if (start || end) vacations.push({ start, end });
+    });
+
+    return vacations;
+  }
+
+  function writeVacations(sectionEl, vacations) {
+    const grid = sectionEl.querySelector('.vacations-grid');
+    if (!grid) return;
+
+    // Ensure we have enough blocks (initially 3 exist in each form)
+    while (grid.querySelectorAll(':scope > div').length < Math.max(3, vacations.length)) {
+      const nextIndex = grid.querySelectorAll(':scope > div').length + 1;
+      const extra = createVacationBlock(nextIndex, "", "", true);
+      const removeBtn = extra.querySelector('.remove-period-btn');
+      if (removeBtn) {
+        removeBtn.addEventListener('click', () => {
+          extra.remove();
+          renumberPeriods(grid);
+        });
+      }
+      grid.appendChild(extra);
+    }
+
+    // Fill values
+    const blocks = Array.from(grid.querySelectorAll(':scope > div'));
+    blocks.forEach((block, idx) => {
+      const inputs = Array.from(block.querySelectorAll('input[type="date"]'));
+      const v = vacations[idx];
+      const start = v?.start || "";
+      const end = v?.end || "";
+      if (inputs[0]) inputs[0].value = start;
+      if (inputs[1]) inputs[1].value = end;
+    });
+
+    renumberPeriods(grid);
+  }
+
+  function readDoctorSection(sectionEl) {
+    const name = sectionEl.dataset.doctor || "Unknown";
+
+    // max jours / semaine
+    const maxInput = sectionEl.querySelector('input[type="number"]');
+    const max_jours = maxInput ? parseInt(maxInput.value || "0", 10) : 0;
+
+    // salles autorisées (checkboxes dans la zone "Salles autorisées")
+    const roomLabels = [
+      "mammographie 1",
+      "echographie 2",
+      "echographie 3",
+      "scanner",
+      "IRM",
+      "radiographie Saint Sever",
+    ];
+
+    const roomChecks = Array.from(sectionEl.querySelectorAll('input[type="checkbox"]'))
+      .filter((cb) => roomLabels.includes(cb.parentElement?.textContent?.trim() || ""));
+
+    const salles_autorisees = roomChecks
+      .filter((cb) => cb.checked)
+      .map((cb) => cb.parentElement.textContent.trim());
+
+    // jours interdits : on considère "décoché" = interdit
+    const jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+    const jours_interdits = [];
+
+    jours.forEach((day) => {
+      const dayCard = Array.from(sectionEl.querySelectorAll(".mini"))
+        .find((div) => div.querySelector("h3")?.textContent?.trim() === day);
+      if (!dayCard) return;
+
+      const checks = Array.from(dayCard.querySelectorAll('input[type="checkbox"]'));
+      // ordre attendu : Matin puis Après-midi
+      if (checks[0] && !checks[0].checked) jours_interdits.push([day, "M"]);
+      if (checks[1] && !checks[1].checked) jours_interdits.push([day, "A"]);
+    });
+
+    // vacances : liste de périodes {start,end}
+    const vacances = readVacations(sectionEl);
+
+    // notes
+    const notes = sectionEl.querySelector("textarea")?.value || "";
+
+    return { name, max_jours, salles_autorisees, jours_interdits, vacances, notes };
+  }
+
+  function fillDoctorSection(sectionEl, data) {
+    // max jours
+    const maxInput = sectionEl.querySelector('input[type="number"]');
+    if (maxInput) maxInput.value = data.max_jours ?? 0;
+
+    // salles autorisées
+    const roomLabels = [
+      "mammographie 1",
+      "echographie 2",
+      "echographie 3",
+      "scanner",
+      "IRM",
+      "radiographie Saint Sever",
+    ];
+
+    const roomChecks = Array.from(sectionEl.querySelectorAll('input[type="checkbox"]'))
+      .filter((cb) => roomLabels.includes(cb.parentElement?.textContent?.trim() || ""));
+
+    roomChecks.forEach((cb) => {
+      const room = cb.parentElement.textContent.trim();
+      cb.checked = (data.salles_autorisees || []).includes(room);
+    });
+
+    // disponibilités (si interdit => décoché, sinon coché)
+    const forbidden = new Set((data.jours_interdits || []).map((x) => `${x[0]}_${x[1]}`));
+    const jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+
+    jours.forEach((day) => {
+      const dayCard = Array.from(sectionEl.querySelectorAll(".mini"))
+        .find((div) => div.querySelector("h3")?.textContent?.trim() === day);
+      if (!dayCard) return;
+
+      const checks = Array.from(dayCard.querySelectorAll('input[type="checkbox"]'));
+      if (checks[0]) checks[0].checked = !forbidden.has(`${day}_M`);
+      if (checks[1]) checks[1].checked = !forbidden.has(`${day}_A`);
+    });
+
+    // notes
+    const ta = sectionEl.querySelector("textarea");
+    if (ta) ta.value = data.notes || "";
+
+    // vacances
+    writeVacations(sectionEl, data.vacances || []);
+  }
+
+  // Save (for ALL doctors)
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.save-doctor');
+    if (!btn) return;
+
+    const section = btn.closest('section[id^="doc-"]');
+    if (!section) return;
+
+    const store = loadStore();
+    const data = readDoctorSection(section);
+    store[data.name] = data;
+    saveStore(store);
+
+    alert(`✅ Données enregistrées pour ${data.name} !`);
+  });
+
+  // Auto-load on page load (for ALL doctors)
+  document.addEventListener("DOMContentLoaded", () => {
+    const store = loadStore();
+    document.querySelectorAll('section[id^="doc-"][data-doctor]').forEach((section) => {
+      const name = section.dataset.doctor;
+      if (name && store[name]) {
+        fillDoctorSection(section, store[name]);
+      }
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planning des médecins</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <span class="logo"></span>
+        <span>Nursa</span>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a class="navlink" href="index.html">Accueil</a></li>
+          <li><a class="navlink primary" href="planning.html">Gérer le planning</a></li>
+          <li><a class="navlink primary" href="planning-salles.html">Planning des salles</a></li>
+          <li><a class="navlink" href="planning-medecins.html">Planning des médecins</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="card section-card">
+        <h1>Planning des médecins</h1>
+        <p class="subtitle">
+          Après avoir lancé l’optimisation, vous pouvez consulter ici le planning par médecin et l’exporter en PDF.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- AFFICHAGE PLANNING PAR SALLE -->
+  <section id="planning-par-salle">
+    <div class="container">
+      <div class="card section-card">
+        <h2>Planning par salle</h2>
+        <p class="subtitle">
+          Colle ici le JSON renvoyé par ton solveur (la liste <code>assignments</code>) pour afficher le planning.
+          <br />
+          Astuce : plus tard, ce JSON sera récupéré automatiquement depuis le backend.
+        </p>
+
+        
+
+        <div class="mini" style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap; align-items:end;">
+          <div>
+            <label class="subtitle"><b>Semaine</b></label><br />
+            <select id="week-select" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;"></select>
+          </div>
+          <div>
+            <label class="subtitle"><b>Salle</b></label><br />
+            <select id="room-select" style="margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(231,237,247,.18); background: rgba(11,18,32,.25); color: inherit;"></select>
+          </div>
+          <div>
+            <button class="btn" type="button" id="refresh-view">Rafraîchir</button>
+          </div>
+        </div>
+        <div class="mini" style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+          <button class="btn primary" type="button" id="run-optimization">Lancer l’optimisation</button>
+         
+          <span class="subtitle" id="run-status"></span>
+        </div>
+
+        <div id="room-planning-output" style="margin-top:14px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOUTONS FIN -->
+  <section>
+    <div class="container">
+      <div class="card section-card">
+        <h2>Navigation</h2>
+        <div class="cta-row">
+          <a class="btn" href="planning.html">Gérer le planning</a>
+          <a class="btn primary" href="planning-salles.html">Planning des salles</a>
+          <a class="btn" href="planning-medecins.html">Planning des médecins</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+  <script>
+    function getApiBase() {
+      // You can override in the browser console:
+      // localStorage.setItem('api_base', 'http://127.0.0.1:8000')
+      const raw = (localStorage.getItem('api_base') || 'http://127.0.0.1:8000').trim();
+      return raw.endsWith('/') ? raw.slice(0, -1) : raw;
+    }
+    // ===== Planning par salle (affichage) =====
+    const ASSIGNMENTS_KEY = "planning_2026_assignments_v1";
+    const ROOMS_KEY = "planning_2026_rooms_v1";
+    const DOCTORS_KEY = "planning_2026_doctors_v1";
+
+    function loadRoomsAvailability() {
+      try {
+        return JSON.parse(localStorage.getItem(ROOMS_KEY)) || {};
+      } catch {
+        return {};
+      }
+    }
+
+    function loadDoctorsConstraints() {
+      // Si tu stockes déjà tes médecins dans localStorage, on les lit ici.
+      // Le solver accepte aussi bien une liste qu'un objet.
+      try {
+        return JSON.parse(localStorage.getItem(DOCTORS_KEY)) || [];
+      } catch {
+        return [];
+      }
+    }
+
+    function inferRoomsFromAvailability(roomsAvailability) {
+      if (!roomsAvailability || typeof roomsAvailability !== 'object') return [];
+      return Object.keys(roomsAvailability);
+    }
+
+    async function runOptimization() {
+      const statusEl = document.getElementById('run-status');
+      const API_BASE = getApiBase();
+      if (statusEl) statusEl.textContent = `⏳ Optimisation en cours… (API: ${API_BASE})`;
+
+      const roomsAvailability = loadRoomsAvailability();
+      const doctors = loadDoctorsConstraints();
+      const rooms = inferRoomsFromAvailability(roomsAvailability);
+
+      const payload = {
+        year: 2026,
+        doctors,
+        // Le backend corrigé accepte rooms_availability
+        rooms_availability: roomsAvailability,
+        // Et accepte aussi 'salles' si tu veux l'envoyer
+        salles: rooms,
+        // Tu peux ajuster ces paramètres
+        block_weeks: 4,
+        alpha: 100,
+        beta: 1,
+        max_time: 5,
+      };
+
+      try {
+        const res = await fetch(`${API_BASE}/solve`, {
+          method: 'POST',
+          mode: 'cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (!res.ok) {
+          const txt = await res.text().catch(() => '');
+          throw new Error(`Erreur backend (${res.status}) ${res.statusText} ${txt}`);
+        }
+
+        const data = await res.json();
+        if (data && data.status && data.status !== 'ok') {
+          throw new Error(data.message || `Statut solver: ${data.status}`);
+        }
+
+        const assignments = (data && Array.isArray(data.assignments)) ? data.assignments : [];
+        if (!assignments.length) {
+          throw new Error('Aucune affectation renvoyée (assignments vide).');
+        }
+
+        // Sauvegarde + affichage
+        saveAssignments(assignments);
+        const ta = document.getElementById('assignments-json');
+        if (ta) ta.value = JSON.stringify(assignments, null, 2);
+
+        buildSelectors(assignments);
+        refreshPlanningView();
+
+        if (statusEl) statusEl.textContent = `✅ Optimisation OK : ${assignments.length} affectations`;
+      } catch (err) {
+        if (statusEl) statusEl.textContent = `❌ ${err.message || err}`;
+      }
+    }
+
+    function loadAssignments() {
+      try {
+        return JSON.parse(localStorage.getItem(ASSIGNMENTS_KEY)) || [];
+      } catch {
+        return [];
+      }
+    }
+
+    function saveAssignments(assignments) {
+      localStorage.setItem(ASSIGNMENTS_KEY, JSON.stringify(assignments));
+    }
+
+    function uniqueSorted(arr) {
+      return Array.from(new Set(arr)).sort((a, b) => (a > b ? 1 : a < b ? -1 : 0));
+    }
+
+    function toDayLabel(day) {
+      // We expect day already like "Lundi" etc.
+      return day;
+    }
+
+    function toSlotLabel(slot) {
+      return slot === "AM" ? "Matin" : slot === "PM" ? "Après-midi" : slot;
+    }
+
+    function buildSelectors(assignments) {
+      const weekSel = document.getElementById('week-select');
+      const roomSel = document.getElementById('room-select');
+      if (!weekSel || !roomSel) return;
+
+      const weeks = uniqueSorted(assignments.map(a => a.week_index));
+      const rooms = uniqueSorted(assignments.map(a => a.room));
+
+      // Weeks
+      weekSel.innerHTML = '';
+      (weeks.length ? weeks : [1]).forEach((w) => {
+        const opt = document.createElement('option');
+        opt.value = String(w);
+        opt.textContent = `Semaine ${w}`;
+        weekSel.appendChild(opt);
+      });
+
+      // Rooms
+      roomSel.innerHTML = '';
+      (rooms.length ? rooms : ["(aucune salle)"]).forEach((r) => {
+        const opt = document.createElement('option');
+        opt.value = String(r);
+        opt.textContent = r;
+        roomSel.appendChild(opt);
+      });
+    }
+
+    function renderRoomWeek(assignments, room, weekIndex) {
+      const out = document.getElementById('room-planning-output');
+      if (!out) return;
+
+      const jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+      const slots = ["AM", "PM"]; // AM=Matin, PM=Après-midi
+
+      // Index by day+slot
+      const map = new Map();
+      assignments
+        .filter(a => String(a.room) === String(room) && Number(a.week_index) === Number(weekIndex))
+        .forEach((a) => {
+          map.set(`${a.day}_${a.slot}`, a);
+        });
+
+      // Build a simple 2x6 grid
+      let html = '';
+      html += `<div class="mini"><h3>${room} — Semaine ${weekIndex}</h3><p class="subtitle">1 médecin par demi-journée</p></div>`;
+
+      html += '<div class="planner-grid" style="grid-template-columns: 110px repeat(6, 1fr);">';
+      html += '<div class="cell header"></div>';
+      jours.forEach((j) => {
+        html += `<div class="cell header">${toDayLabel(j)}</div>`;
+      });
+
+      slots.forEach((sl) => {
+        html += `<div class="cell hour">${toSlotLabel(sl)}</div>`;
+        jours.forEach((j) => {
+          const a = map.get(`${j}_${sl}`);
+          if (a && a.doctor) {
+            html += `<div class="cell"><span class="event">${a.doctor}</span></div>`;
+          } else {
+            html += `<div class="cell"></div>`;
+          }
+        });
+      });
+
+      html += '</div>';
+      out.innerHTML = html;
+    }
+
+    function refreshPlanningView() {
+      const assignments = loadAssignments();
+      const weekSel = document.getElementById('week-select');
+      const roomSel = document.getElementById('room-select');
+      if (!weekSel || !roomSel) return;
+
+      const week = Number(weekSel.value || 1);
+      const room = roomSel.value;
+      renderRoomWeek(assignments, room, week);
+    }
+
+    // ===== Boutons / UI =====
+    document.getElementById('refresh-view')?.addEventListener('click', () => {
+      refreshPlanningView();
+    });
+
+    document.getElementById('run-optimization')?.addEventListener('click', () => {
+      runOptimization();
+    });
+
+    // Auto-init
+    document.addEventListener('DOMContentLoaded', () => {
+      const assignments = loadAssignments();
+      buildSelectors(assignments);
+      refreshPlanningView();
+    });
+  </script>
+</body>
+</html>

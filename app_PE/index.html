@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nursa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Retour en haut">
+          <span class="logo" aria-hidden="true"></span>
+          <span>Nursa</span>
+        </a>
+
+        <nav aria-label="Menu principal">
+          <ul>
+            <li><a class="navlink" href="#about">En savoir plus</a></li>
+            <li><a class="navlink primary" href="planning.html">les contraintes des médecins</a></li>
+            <li><a class="navlink primary" href="planning-salles.html">Planning des salles</a></li>
+            <li><a class="navlink primary" href="planning-medecins.html">Planning final</a></li>
+            <li><a class="navlink" href="#contact">Contacts</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero / Accueil -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="card hero-main">
+            <h1>Votre planning, clair, simple et optimisé.</h1>
+            <p class="subtitle">
+                Pour utiliser ce site, il suffit de renseigner les salles nécessaires, puis d’ajouter les médecins avec leurs contraintes. Le site génère ensuite automatiquement un emploi du temps optimisé, respectant l’ensemble des règles et des préférences définies.
+                <br />
+              
+            </p>
+
+            <div class="cta-row">
+              <a class="btn primary" href="planning.html">les contraintes des médecins</a>
+              <a class="btn" href="planning-salles.html">Planning des salles</a>
+              <a class="btn" href="planning-medecins.html">Planning final</a>
+              <a class="btn" href="#contact">Nous contacter</a>
+            </div>
+          </div>
+
+          <aside class="card hero-side" aria-label="Aperçu">
+            <img src="assets/logo.png" alt="Logo du site" class="logo">
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- En savoir plus -->
+    <section id="about">
+      <div class="container">
+        <div class="card section-card">
+          <h2>En savoir plus</h2>
+          <p>
+            </p>
+
+          <div class="grid-3">
+            <div class="mini">
+              <h3>Simple</h3>
+              <p>Une interface claire pour visualiser les créneaux.</p>
+            </div>
+            <div class="mini">
+              <h3>optimisé</h3>
+              <p>Pour remplir le plus de créneaux possibles et éviter les jours sous tension.</p>
+            </div>
+            <div class="mini">
+              <h3>équitable</h3>
+              <p>limiter les différences d'emploi du temps entre les médecins pour éviter les inégalités</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+  <!-- Contacts -->
+  <footer id="contact">
+    <div class="container">
+      <div class="card section-card">
+        <h2>Contacts</h2>
+        <p>Remplace ces infos par vos vrais contacts.</p>
+
+        <div class="contacts">
+          <div class="contact-card">
+            <b>Email</b><br />
+            jules.campistron@gmail.com
+          </div>
+          <div class="contact-card">
+            <b>Téléphone</b><br />
+            +33 6 80 14 50 52
+          </div>
+          <div class="contact-card">
+            <b>Réseaux</b><br />
+            LinkedIn / Instagram
+          </div>
+        </div>
+
+        <p class="small" style="margin-top:14px;">© <span id="year">2026</span> Nursa — Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Petit détail esthétique (sans logique planning) : met l’année automatiquement.
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

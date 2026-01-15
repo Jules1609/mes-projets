@@ -1,0 +1,239 @@
+:root {
+    --bg: #0b1220;
+    --card: #111a2e;
+    --text: #e7edf7;
+    --muted: #a9b7d0;
+    --border: rgba(231,237,247,.12);
+    --shadow: 0 18px 50px rgba(0,0,0,.35);
+    --radius: 16px;
+    --max: 1100px;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(1200px 700px at 15% 10%, rgba(80,120,255,.22), transparent 60%),
+      radial-gradient(900px 600px at 85% 25%, rgba(160,90,255,.18), transparent 55%),
+      radial-gradient(800px 500px at 50% 90%, rgba(50,200,180,.12), transparent 60%),
+      var(--bg);
+    line-height: 1.5;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  /* ---------- LAYOUT ---------- */
+  
+  .container {
+    width: min(var(--max), calc(100% - 40px));
+    margin: 0 auto;
+  }
+  
+  .card {
+    background: rgba(17,26,46,.72);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  
+  /* ---------- HEADER / NAV ---------- */
+  
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    background: rgba(11,18,32,.65);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+  }
+  
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+  }
+  
+  .logo {
+    width: 34px;
+    height: 34px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #4f7cff, #a05aff);
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navlink {
+    padding: 10px 12px;
+    border-radius: 12px;
+    color: var(--muted);
+  }
+  
+  .navlink:hover {
+    background: rgba(231,237,247,.08);
+    color: var(--text);
+  }
+  
+  .navlink.primary {
+    background: rgba(80,120,255,.25);
+    color: var(--text);
+  }
+  
+  /* ---------- HERO ---------- */
+  
+  .hero {
+    padding: 50px 0;
+  }
+  
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 22px;
+  }
+  
+  .hero-main {
+    padding: 28px;
+  }
+  
+  h1 {
+    margin-top: 0;
+    font-size: 42px;
+  }
+  
+  .subtitle {
+    color: var(--muted);
+  }
+  
+  /* ---------- BUTTONS ---------- */
+  
+.btn {
+    display: inline-block;
+    padding: 12px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: rgba(231,237,247,.08);
+    font-weight: 600;
+    color: #ffffff;
+  }
+  
+  .btn.primary {
+    background: rgba(80,120,255,.3);
+    color: #ffffff;
+  }
+  
+  /* ---------- SECTIONS ---------- */
+  
+  section {
+    padding: 30px 0;
+  }
+  
+  .section-card {
+    padding: 22px;
+  }
+  
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  
+  .mini {
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: rgba(11,18,32,.4);
+  }
+  
+  /* ---------- PLANNING ---------- */
+  
+.planner-grid {
+  display: grid;
+  grid-template-columns: 80px repeat(6, 1fr);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+  
+  .cell {
+    min-height: 55px;
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  .cell.header {
+    background: rgba(231,237,247,.08);
+    font-weight: 700;
+  }
+  
+  .cell.hour {
+    text-align: right;
+    color: var(--muted);
+  }
+  
+  .event {
+    background: rgba(80,120,255,.25);
+    padding: 6px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  
+  /* ---------- CONTACTS ---------- */
+  
+  .contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  
+  .contact-card {
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: rgba(11,18,32,.4);
+  }
+  
+  /* ---------- RESPONSIVE ---------- */
+  
+@media (max-width: 900px) {
+  .hero-grid,
+  .grid-3,
+  .contacts {
+    grid-template-columns: 1fr;
+  }
+
+  .planner-grid {
+    grid-template-columns: 70px repeat(6, 1fr);
+  }
+}
+
+.logo {
+    height: 300px;
+    width: auto;
+  }
